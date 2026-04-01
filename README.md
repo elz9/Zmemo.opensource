@@ -1,5 +1,7 @@
 # Zmemo - Local-First Gmail Search
 
+![Zmemo](public/zmemo.png)
+
 Zmemo is a desktop app that builds a private, local search index for your Gmail so you can find important emails in milliseconds. It runs fully on-device with a Tauri + React UI and a FastAPI backend backed by SQLite FTS5.
 
 ## Key Features
