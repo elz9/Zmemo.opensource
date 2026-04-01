@@ -1,0 +1,20 @@
+# Web framework
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+
+# Database
+aiosqlite==0.20.0
+
+# Google API
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+google-api-python-client==2.127.0
+
+# NOTE: No pydantic needed - using stdlib dataclasses instead
+# NOTE: No sentence-transformers or torch needed.
+# Semantic search uses a built-in stdlib-only TF-IDF engine (embeddings.py).
+# This keeps the install fast and the app fully offline-capable.
+
+# Packaging
+pyinstaller==6.16.0

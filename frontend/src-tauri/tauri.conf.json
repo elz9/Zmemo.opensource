@@ -1,0 +1,90 @@
+{
+    "build": {
+        "beforeDevCommand": "npm run dev",
+        "beforeBuildCommand": "npm run prepare:desktop && npm run build",
+        "devPath": "http://localhost:1420",
+        "distDir": "../dist"
+    },
+    "package": {
+        "productName": "Zmemo",
+        "version": "1.0.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "shell": {
+                "all": false,
+                "open": true,
+                "sidecar": true
+            },
+            "http": {
+                "all": true,
+                "scope": [
+                    "https://accounts.google.com/*",
+                    "https://oauth2.googleapis.com/*",
+                    "http://127.0.0.1:8765/*"
+                ]
+            },
+            "fs": {
+                "all": false,
+                "readFile": true,
+                "writeFile": true,
+                "readDir": true,
+                "createDir": true,
+                "scope": [
+                    "$APPDATA/*",
+                    "$APPLOCALDATA/*"
+                ]
+            },
+            "notification": {
+                "all": true
+            },
+            "process": {
+                "all": false,
+                "relaunch": true
+            }
+        },
+        "updater": {
+            "active": false,
+            "dialog": false,
+            "endpoints": [
+                "https://github.com/your-org/your-repo/releases/latest/download/latest.json"
+            ],
+            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEE0N0MxMDI0QTMxNzI1N0MKUldSOEpSZWpKQkI4cEJ5UmFaTllXYWhEd0s3RSswbDN5Vi8rbzFQZTVsSG5vY1o3aW9iZWp6YmUK",
+            "windows": {
+                "installMode": "passive"
+            }
+        },
+        "bundle": {
+            "active": true,
+            "externalBin": [
+                "binaries/backend"
+            ],
+            "resources": [
+                "resources/credentials.json"
+            ],
+            "icon": [
+                "icons/32x32.png",
+                "icons/128x128.png",
+                "icons/icon.icns",
+                "icons/icon.ico"
+            ],
+            "identifier": "com.gmail-memory.app",
+            "targets": "all"
+        },
+        "security": {
+            "csp": null
+        },
+        "windows": [
+            {
+                "fullscreen": false,
+                "resizable": true,
+                "title": "Zmemo",
+                "width": 1200,
+                "height": 800,
+                "minWidth": 800,
+                "minHeight": 600
+            }
+        ]
+    }
+}
